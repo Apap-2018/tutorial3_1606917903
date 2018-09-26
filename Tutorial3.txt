@@ -1,0 +1,51 @@
+Fathya Annasya Yuzrin
+1606917903
+APAP-B
+
+1. Tidak error. Berhasil menampilkan:
+Data Berhasil Ditambahkan
+2. Terjadi error sebagai berikut:
+Whitelabel Error Page
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+Wed Sep 26 15:23:04 ICT 2018
+There was an unexpected error (type=Bad Request, status=400).
+Required int parameter 'flyHour' is not present
+
+Hal ini terjadi karena parameter flyHour tidak diisi padahal bertipe required dan tidak ada nilai default.
+
+3. Ya. Muncul sebagai berikut:
+1
+1234
+Jono
+20
+
+4.Terjadi error sebagai berikut:
+Whitelabel Error Page
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+
+Wed Sep 26 15:51:40 ICT 2018
+There was an unexpected error (type=Internal Server Error, status=500).
+An error happened during template parsing (template: "class path resource [templates/view-pilot.html]")
+
+Hal ini terjadi karena data yang sebelumnya di-add terlah direset kembali. Sehingga ketika akan melakukan view untuk pilot dengan license number 1234, pilot tersebut belum ada di database, sehingga terjadi error.
+
+5. Ya, muncul sebagai berikut:
+1
+1234
+Jono
+20
+
+6. 
+Ditambahkan:
+localhost:8080/pilot/add?id=2&licenseNumber=1235&name=Susi&flyHour=20
+
+Ya, kedua data pilot berhasil ditampilkan sebagai berikut:
+1
+1234
+Jono
+20
+2
+1235
+Susi
+20
