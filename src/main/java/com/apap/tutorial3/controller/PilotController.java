@@ -69,7 +69,7 @@ public class PilotController {
 		}
 	}
 	
-	@RequestMapping({"/pilot/update/license-number","pilot/update/license-number/{licenseNumber}/fly-hour/{flyhour}"})
+	@RequestMapping({"/pilot/update/license-number","pilot/update/license-number/{licenseNumber}/fly-hour/{flyHour}"})
 	public String updateFlyHour(@PathVariable (value = "licenseNumber", required = false) String licenseNumber, 
 								@PathVariable (value = "flyHour", required = false) Integer flyHour, Model model) {
 		PilotModel archive = pilotService.getPilotDetailByLicenseNumber(licenseNumber);
